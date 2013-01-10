@@ -9,7 +9,7 @@ JMX log appender for log4j.
 
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-  <appender name="JMX" class="com.which.logger.jmx.JmxLogAppender">
+  <appender name="JMX" class="com.superafroman.logger.jmx.JmxLogAppender">
     <param name="ObjectName" value="com.superafroman.example:service=Logging,type=JmxLogAppender"/>
     <param name="Threshold" value="WARN" />
     <layout class="org.apache.log4j.PatternLayout">
