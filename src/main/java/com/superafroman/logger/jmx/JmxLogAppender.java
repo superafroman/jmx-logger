@@ -113,6 +113,11 @@ public class JmxLogAppender extends AppenderSkeleton {
 
 				Map<String, Object> env = new HashMap<>();
 
+				String passwordFile = System.getProperty("com.sun.management.jmxremote.password.file");
+				if (passwordFile != null) {
+					env.put("jmx.remote.x.password.file", passwordFile);
+				}
+
 				JMXServiceURL url = new JMXServiceURL("service:jmx:rmi://" + hostname + ":" + rmiServerPort
 						+ "/jndi/rmi://" + hostname + ":" + rmiRegistryPort + "/jmxrmi");
 
